@@ -1,0 +1,41 @@
+﻿@model Crud.Models.Medicamento
+
+@{
+    ViewBag.Title = "Eliminar";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title</title>
+    <link href="~/Content/custom-styles.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+    <div class="container my-5">
+        <div class="panel">
+            <div class="panel-heading">
+                <h4 class="text-dark">Eliminar Medicamento</h4>
+            </div>
+            <div class="panel-body">
+                <div class="alert-danger">
+                    <h5>¿Desea eliminar este medicamento?</h5>
+                    <p><strong>ID:</strong> @Model.MedicamentoID</p>
+                    <p><strong>Nombre:</strong> @Model.Nombre</p>
+                    <p><strong>Precio:</strong> @Model.Precio</p>
+                    <p><strong>Descripción:</strong> @Model.Descripcion</p>
+                    <p><strong>Stock:</strong> @Model.Stock</p>
+                </div>
+                <form action="@Url.Action("Eliminar","Medicamento")" method="post">
+                    <input type="hidden" class="form-control" name="MedicamentoID" value="@Model.MedicamentoID" />
+                    <button type="button" class="btn btn-primary" onclick="history.back();">Volver</button>
+
+                    <button type="submit" class="btn btn-danger">Eliminar</button>
+                </form>
+                 
+            </div>
+        </div>
+    </div>
+</body>
+</html>

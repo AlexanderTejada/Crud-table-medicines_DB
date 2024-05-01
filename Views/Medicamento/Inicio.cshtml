@@ -1,0 +1,78 @@
+﻿@model List<Crud.Models.Medicamento>
+
+@{
+    ViewBag.Title = "Inicio";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title</title>
+    <link href="~/Content/custom-styles.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+    <div class="container my-5">
+        <div class="panel">
+            <div class="row mb-3">
+                <div class="col-md-6">
+                    <a class="btn btn-primary" href="@Url.Action("Registrar", "Medicamento")">Crear Nuevo</a>
+                </div>
+
+            </div>
+
+            <form action="@Url.Action("Buscar", "Medicamento")" method="get">
+
+                <label class="row mb-3" for="site-search ">
+                   
+
+                    <input class="boton-buscar" type="submit" value="Buscar" />
+
+                    <input name="nombre" class="xd" type="search" placeholder="Escriba el nombre del medicamento aquí">
+                </label>
+
+            </form>
+
+
+            <div class="table-container">
+                <table class="table">
+
+
+                    <thead>
+
+
+                        <tr>
+                            <th>ID</th>
+                            <th>Nombre</th>
+                            <th>Descripción</th>
+                            <th>Precio</th>
+                            <th>Stock</th>
+                            <th>Fecha de Expiración</th>
+                            <th>Acciones</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (Crud.Models.Medicamento item in Model)
+                        {
+                            <tr>
+                                <td>@item.MedicamentoID</td>
+                                <td>@item.Nombre</td>
+                                <td>@item.Descripcion</td>
+                                <td>@item.Precio</td>
+                                <td>@item.Stock</td>
+                                <td>@item.FechaExpiracion.ToShortDateString()</td>
+                                <td>
+                                    <a class="btn btn-primary" href="@Url.Action("Editar", "Medicamento", new { idmedicamento = item.MedicamentoID })">Editar</a>
+                                    <a class="btn btn-danger" href="@Url.Action("Eliminar", "Medicamento", new { idmedicamento = item.MedicamentoID })">Eliminar</a>
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

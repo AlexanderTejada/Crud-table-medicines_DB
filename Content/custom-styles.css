@@ -1,0 +1,128 @@
+﻿:root {
+    --color-primary: #000000; 
+    --color-bg-dark: #edf7ff; 
+    --color-bg-light: rgba(255, 255, 255, 0.32);
+    --color-accent: #00447d; 
+    --color-border: rgba(44, 41, 41, 0.67); 
+    --blur-effect: 8px; 
+}
+
+body {
+    background-color: var(--color-bg-dark);
+    color: var(--color-primary);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-image: url("https://img.freepik.com/free-vector/winter-light-blue-gradient-background_53876-120755.jpg?t=st=1714575504~exp=1714579104~hmac=23991ba4b0f4ca04cefcb9949fdca71516d8c0d6284dd5ea651f805ef16a4004&w=1380");
+    background-size: cover;
+    background-position: center; 
+}
+
+.container {
+    padding: 30px;
+}
+
+.panel-heading {
+    background-color: transparent;
+    padding: 20px;
+    border-bottom: 1px solid var(--color-border);
+}
+
+    .panel-heading h4 {
+        margin: 0;
+        color: transparent;
+    }
+
+.panel-body {
+    padding: 20px;
+}
+
+.btn {
+    border: none;
+    border-radius: 4px;
+    padding: 8px 16px;
+    cursor: pointer;
+    font-weight: bold;
+    text-transform: uppercase;
+    transition: background-color 0.3s;
+    color: var(--color-primary);
+    background-color: transparent;
+    border: 1px solid var(--color-accent);
+}
+
+    .btn:hover,
+    .boton-buscar:hover {
+        background-color: var(--color-accent);
+        color: white;
+        transition: background-color 0.3s;
+    }
+
+.btn-danger:hover {
+    background-color: #b21919;
+    color: white; 
+}
+
+.btn-new:hover {
+    background-color: #000000; 
+    color: white; 
+}
+
+.table-container {
+    overflow-x: auto;
+    backdrop-filter: blur(var(--blur-effect));
+    background-color: var(--color-bg-light);
+    border-radius: 8px;
+    border: 0px solid var(--color-border);
+    table-layout: fixed;
+    box-shadow: 0px 0px 15px rgba(1, 0, 0, 0.50); 
+}
+
+.contacts-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+    .contacts-table thead {
+        background-color: transparent;
+        color: var(--color-primary);
+    }
+
+    .contacts-table th,
+    .contacts-table td {
+        text-align: left;
+        padding: 12px;
+        border-bottom: 1px solid var(--color-border);
+    }
+
+    .contacts-table tr:hover {
+        background-color: rgba(255, 255, 255, 0.8);
+    }
+
+.form-inline .form-control {
+    margin-right: .5rem; 
+    margin-bottom: 0; 
+}
+
+.form-inline button {
+    vertical-align: middle; 
+}
+
+.xd {
+    border-radius: 5px;
+    background-color: transparent;
+    padding: 5px;
+    text-align: center;
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.70);
+    border-color: transparent;
+    --blur-effect: 8px;
+}
+
+.boton-buscar {
+    border-radius: 5px;
+    background-color: #000000;
+    color: white;
+    padding: 2px;
+    font-size: 30px;
+    font-family: Segoe UI;
+    font-weight: bold;
+    border: none;
+}
